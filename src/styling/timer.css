@@ -1,0 +1,75 @@
+ .ui{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 60px;
+ }
+ .diplaymain{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   
+    
+ }
+
+ .maintitle{
+    display: flex;
+   justify-content: center;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-size:50px ;
+   gap: 40px;
+ }
+ .sessions{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    font-size:  50px;
+ }
+ .controls{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    font-size: 20px;
+ }
+ .timecontrolsButtons{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    
+ }
+ .increment{
+    width: 40px;
+    cursor: pointer;
+ }
+ .decrement{
+    width: 40px;
+    cursor: pointer;
+ 
+ }
+ .breakcontrols{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    
+ }
+ .timercontrols{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+ }
+ .breakdisplay{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+     
+ }
