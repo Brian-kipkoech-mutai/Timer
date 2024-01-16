@@ -1,17 +1,39 @@
-import { DECREMENT, INCREMENT ,AUTODECREMENT, MANUALINCREMENT, MANUALDECREMENT} from "../actions/actionTypes"
+import { DECREMENT, INCREMENT ,AUTODECREMENT, MANUALINCREMENT, MANUALDECREMENT, PLAY, PAUSE,RESET} from "../actions/actionTypes"
 
    
    const defaultState={
-      manualMinuteset:5,
-      timeInMinutes:5,
-      timeInSeconds:0
+     defaultMinutes:25,
+      manualMinuteset:25,
+      timeInMinutes:25,
+      timeInSeconds:0,
+      active :false,
    }
 
     const inputReducer=(state=defaultState,action)=>{
 
         switch(action.type){
+            case RESET:
+            return{
+                ...state,
+                timeInMinutes: state.defaultMinutes,
+                timeInSeconds:0,
+                active: false,
+                manualMinuteset:state.defaultMinutes
+
+            }
+
+            case PLAY:
+                return{
+                    ...state,
+                    active:action.payload
+                }
+             case PAUSE:
+                return{
+                    ...state,
+                    active:false
+                }
             case MANUALINCREMENT:
-                if(state.manualMinuteset<59){
+                if(state.manualMinuteset<=59){
                     return{
                         ...state,
                         manualMinuteset:state.manualMinuteset+1
@@ -25,6 +47,7 @@ import { DECREMENT, INCREMENT ,AUTODECREMENT, MANUALINCREMENT, MANUALDECREMENT} 
                 return{
                     ...state,
                     manualMinuteset:state.manualMinuteset-1
+                    
                 }
                }
                else{
@@ -32,7 +55,7 @@ import { DECREMENT, INCREMENT ,AUTODECREMENT, MANUALINCREMENT, MANUALDECREMENT} 
                }
             case INCREMENT:
                 let value=state.timeInMinutes
-                if( value<59){
+                if( value<=59){
                 return{
                     ...state,
                     timeInMinutes:state.timeInMinutes+1,

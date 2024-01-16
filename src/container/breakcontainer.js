@@ -9,13 +9,22 @@ import breakManualDecrementAction from "../redux/actions/breakManualDecrement"
 
 
 
-const BreakContainer=({handleIncrement,handledecrement,timeInSeconds,timeInMinutes,handleAutoDecrement,
-
-    handleManualIncrement,handleManualDecrement,manualTimeSet,power})=>{
+const BreakContainer=({
+   handleIncrement,
+   handledecrement,
+   timeInSeconds,
+   timeInMinutes,
+   handleAutoDecrement,
+   active,
+   handleManualIncrement,
+   handleManualDecrement,
+   manualTimeSet,
+   power
+             })=>{
         console.log('power',power);
 
     useEffect( ()=>{
-        const decrementIntervals=setInterval(()=>{
+        const decrementIntervals=active&&setInterval(()=>{
            
           if(timeInMinutes>=0&&power){
    
@@ -38,7 +47,7 @@ const BreakContainer=({handleIncrement,handledecrement,timeInSeconds,timeInMinut
            clearInterval(decrementIntervals)
         }
    }
-   ,[handleAutoDecrement,timeInMinutes,timeInSeconds,power]
+   ,[handleAutoDecrement,timeInMinutes,timeInSeconds,power,active]
    
    )
 
@@ -52,6 +61,7 @@ const BreakContainer=({handleIncrement,handledecrement,timeInSeconds,timeInMinut
          handleManualIncrement={handleManualIncrement}
          manualTimeSet={manualTimeSet}
          power={power}
+         active={active}
          
         />
     )
@@ -62,7 +72,8 @@ const BreakContainer=({handleIncrement,handledecrement,timeInSeconds,timeInMinut
          timeInSeconds:state.breakReducer.timeInSeconds,
          timeInMinutes:state.breakReducer.timeInMinutes,
          manualTimeSet:state.breakReducer.manualTimeSet,
-         power:state.breakReducer.power
+         power:state.breakReducer.power,
+         active:state.inputReducer.active
          
 
   

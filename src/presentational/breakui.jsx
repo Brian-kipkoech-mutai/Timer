@@ -1,26 +1,25 @@
 
-import up from '../assets/controlsIcons/up-arrow.png'
-import down from  '../assets/controlsIcons/arrow-down-sign-to-navigate.png'
+import up from '../assets/new.png'
+import down from  '../assets/minus.png'
 const BreakUi=({
     handleIncrement,
     handledecrement,
-    timeInSeconds,timeInMinutes,
+     active,
     handleManualIncrement,
     handleManualDecrement,
-    manualTimeSet,
-    power 
+     
           })=>{
     return(
    <div className="breakbox">
    
         <div className="breakdisplay">
-             <img  src={up}  alt='Down Button' className="increment" onClick={()=>{
-                handleIncrement()
-                handleManualIncrement()
+             <img id="break-increment"  src={up}  alt='up Button' className="increment" onClick={()=>{
+               !active&& handleIncrement()
+               !active&& handleManualIncrement()
             }}></img>
-            <img src={down} alt='Down Button' className="decrement" onClick={()=>{
-                handledecrement()
-                handleManualDecrement()
+            <img id="break-decrement" src={down} alt='Down Button' className="decrement" onClick={()=>{
+                !active&& handledecrement()
+                !active&& handleManualDecrement()
             }}></img>
         </div>
    </div>

@@ -9,5 +9,8 @@
  export const BREAKMANUALDECREMENT='BREAKMANUALDECREMENT';
  export const BREAKMANUALINCREMENT="BREAKMANUALINCREMENT";
  export const BREAKPOWER='BREAKPOWER';
+ export const PAUSE="PAUSE";
+ export const PLAY="PLAY";
+ export const RESET='RESET';
 
 

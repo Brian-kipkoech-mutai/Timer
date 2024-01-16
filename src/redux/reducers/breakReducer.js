@@ -1,7 +1,8 @@
-import { BREAKAUTODECREMENT, BREAKDECREMENT, BREAKINCREMENT, BREAKMANUALDECREMENT, BREAKMANUALINCREMENT, BREAKPOWER } from "../actions/actionTypes"
+import { BREAKAUTODECREMENT, BREAKDECREMENT, BREAKINCREMENT, BREAKMANUALDECREMENT, BREAKMANUALINCREMENT, BREAKPOWER, RESET } from "../actions/actionTypes"
 
 
  const defaultState={
+    defaultMinutes:5,
     timeInMinutes:5,
     timeInSeconds:0,
     manualTimeSet:5,
@@ -24,7 +25,7 @@ const breakReducer=( state=defaultState,action)=>{
     }
  }
         case  BREAKINCREMENT:
-            if(state.timeInMinutes<59){
+            if(state.timeInMinutes<=59){
                 return{
                     ...state,
                     timeInMinutes:state.timeInMinutes+1
@@ -76,7 +77,7 @@ const breakReducer=( state=defaultState,action)=>{
                 }
             }
         case  BREAKMANUALINCREMENT:
-            if(state.manualTimeSet<59){
+            if(state.manualTimeSet<=59){
                 return{
                     ...state,
                     manualTimeSet:state.manualTimeSet+1
@@ -91,6 +92,15 @@ const breakReducer=( state=defaultState,action)=>{
             return{
                 ...state,
                 power:true
+            }
+        case RESET:
+            return{
+                ...state,
+                timeInMinutes:state.defaultMinutes,
+                timeInSeconds:0,
+                manualTimeSet:5,
+                power:false
+
             }
         default:
             return state
