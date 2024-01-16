@@ -103,7 +103,7 @@ import alarm from '../assets/audios/mixkit-marimba-waiting-ringtone-1360.wav'
               
              </div>
              </div>
-             <hr style={{ borderColor:'black',width:'100%',borderWidth:'1px'}}/>
+             <hr style={{ borderColor:'black',width:'100%',borderWidth:'1px' ,marginTop:'0px' }}/>
              <div className="generalControls">
                 <div className="generalControlsButtons">
                 <div><img id="start_stop" src={active?pause:play} alt="play Button"  className="controlsButtons"

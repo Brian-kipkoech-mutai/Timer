@@ -92,11 +92,14 @@
     flex-direction: row;
     gap: 40px;
     font-size: 20px;
+     
  }
  .timecontrolsButtons{
     display: flex;
     gap: 30px;
     align-items: center;
+    justify-content: center;
+    height: 100%;
     
  }
  .increment{
@@ -131,7 +134,7 @@
  .breakcontrols{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 40px;
     align-items: center;
     
     
@@ -139,7 +142,7 @@
  .timercontrols{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 40px;
     align-items: center;
      
  }
