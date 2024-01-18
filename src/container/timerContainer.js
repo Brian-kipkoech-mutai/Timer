@@ -32,6 +32,7 @@ import resetAction from "../redux/actions/resetaAction.js"
    active,
 })=>{
    console.log('active',active); 
+   console.log('timeinseconds',timeInSeconds);
     
    
  const alarmRef =useRef(null);
