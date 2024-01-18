@@ -1,3 +1,4 @@
+ 
 {
   "short_name": "Timer",
   "name": "Brians Timer",
@@ -8,7 +9,7 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "timerAppLogo.jpg",
       "type": "image/png",
       "sizes": "192x192"
     },
